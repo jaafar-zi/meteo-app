@@ -1,5 +1,3 @@
-// src/features/search/CityDropdown.tsx
-
 import React from "react";
 import { City } from "../../shared/types/weather.types";
 

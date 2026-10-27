@@ -1,5 +1,3 @@
-// src/shared/utils/helpers.ts
-
 import { WEATHER_DESCRIPTIONS, WEATHER_ICONS } from "../constants/weatherCodes";
 
 export const getWeatherIcon = (code: number): string => {

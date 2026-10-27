@@ -1,5 +1,3 @@
-// src/features/geolocation/geolocationSlice.ts
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { Coordinates } from "../../shared/types/weather.types";
 import { fetchWeatherByLocation } from "../weather/weatherSlice";

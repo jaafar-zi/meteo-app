@@ -1,5 +1,3 @@
-// src/features/geolocation/GeolocationButton.tsx
-
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { requestGeolocation } from "./geolocationSlice";

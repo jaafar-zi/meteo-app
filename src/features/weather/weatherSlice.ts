@@ -1,5 +1,3 @@
-// src/features/weather/weatherSlice.ts
-
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { City, ForecastDay } from "../../shared/types/weather.types";
 import { fetchWeatherByInseeCode, fetchWeatherByCoords } from "./weatherApi";
