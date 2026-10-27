@@ -1,0 +1,22 @@
+.welcome-message {
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+}
+
+.welcome-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+
+.welcome-message h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 400px;
+  margin: 0 auto;
+}
