@@ -77,6 +77,24 @@
   border-radius: 12px;
 }
 
+.title-favorite-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.fav-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fav-button:hover {
+  transform: scale(1.2);
+}
+
 .detail-icon { font-size: 1.5rem; margin-bottom: 5px; }
 .detail-label { font-size: 0.8rem; color: #999; margin-bottom: 3px; }
 .detail-value { font-size: 0.95rem; font-weight: 600; color: #444; }

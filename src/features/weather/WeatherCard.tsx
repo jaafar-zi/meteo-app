@@ -1,23 +1,49 @@
 import React from "react";
-import { useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import WeatherDetails from "./WeatherDetails";
 import {
   getWeatherIcon,
   getWeatherDescription,
   formatDateTime,
 } from "../../shared/utils/helpers";
+import { toggleFavoriteCity, openAuthModal } from "../auth";
 import "./weather.css";
 
 const WeatherCard: React.FC = () => {
+  const dispatch = useAppDispatch();
   const { city, today, lastUpdate } = useAppSelector((state) => state.weather);
+  const { user, isAuthenticated } = useAppSelector((state) => state.auth);
 
   if (!city || !today) return null;
+
+  const isFavorite = user?.favorites.some((f) => f.insee === city.insee);
+
+  const handleFavoriteClick = () => {
+    if (!isAuthenticated) {
+      dispatch(openAuthModal("login"));
+    } else {
+      dispatch(toggleFavoriteCity(city));
+    }
+  };
 
   return (
     <div className="weather-card today-card">
       <div className="today-header">
         <div>
-          <h2 className="city-title">{city.name}</h2>
+          <div className="title-favorite-row">
+            <h2 className="city-title">{city.name}</h2>
+            <button
+              className={`fav-button ${isFavorite ? "active" : ""}`}
+              onClick={handleFavoriteClick}
+              title={
+                isFavorite
+                  ? "Retirer des favoris"
+                  : "Ajouter aux favoris"
+              }
+            >
+              {isFavorite ? "⭐" : "☆"}
+            </button>
+          </div>
           <p className="city-info">
             Code postal: {city.cp} | Alt: {city.altitude}m
           </p>

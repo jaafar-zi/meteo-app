@@ -3,6 +3,7 @@ import searchReducer from "../features/search/searchSlice";
 import weatherReducer from "../features/weather/weatherSlice";
 import forecastReducer from "../features/forecast/forecastSlice";
 import geolocationReducer from "../features/geolocation/geolocationSlice";
+import { authReducer } from "../features/auth";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     weather: weatherReducer,
     forecast: forecastReducer,
     geolocation: geolocationReducer,
+    auth: authReducer,  
   },
 });
 
